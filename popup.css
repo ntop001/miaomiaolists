@@ -1,0 +1,29 @@
+button {
+  height: 30px;
+  width: 30px;
+  outline: none;
+  margin: 10px;
+  border: none;
+  border-radius: 2px;
+}
+
+button.current {
+  box-shadow: 0 0 0 2px white,
+              0 0 0 4px black;
+}
+
+#links-container div {
+	margin: 4px;
+	max-width: 240px;
+  min-width: 180px;
+}
+
+#links-container div {
+	text-overflow: ellipsis; 
+	overflow: hidden; 
+	white-space: nowrap;
+}
+
+#links-container div:hover {
+  background: rgb(255, 252, 220)
+}
