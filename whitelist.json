@@ -1,0 +1,36 @@
+{
+	"name": "Official whitelist from miaow 🐱",
+	"key": "miaow",
+	"websites": [
+		"https://revoke.cash/",
+		"https://etherscan.io/",
+
+		"https://opensea.io/",
+		"https://looksrare.org/",
+		"https://x2y2.io/",
+		"https://blur.io/",
+		"https://sudoswap.xyz/",
+
+	  	"https://uniswap.org/",
+	  	"https://app.uniswap.org/",
+	  	"https://www.sushi.com/",
+	  	"https://balancer.fi/",
+	  	"https://app.balancer.fi/",	 
+	  	"https://app.1inch.io/",
+	  	"https://www.matcha.xyz/",
+	  	"https://www.paraswap.io/",
+	  	"https://app.paraswap.io/",
+	  	"https://cow.fi/",
+	  	"https://swap.cow.fi/",
+	  	"https://debank.com/",
+	  	"https://zapper.fi/",
+	  	"https://metamask.io/",
+	  	"https://chainlist.org/",
+	  	"https://compound.finance/",
+	  	"https://app.compound.finance/",
+	  	"https://aave.com/",
+	  	"https://app.aave.com/",
+	  	"https://curve.fi/",
+	  	"https://yearn.finance/"
+	]
+}
