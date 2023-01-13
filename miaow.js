@@ -56,12 +56,25 @@ async function updateAndSave(url) {
   await websites.forEach( async url => {
     await chrome.storage.sync.set({ [ getHost(url) ] : key || name });
   })
-  console.log("update whitelist at:", Date.now())
+  await chrome.storage.sync.set( { "updated_at": Date.now() })
+  console.log("update whitelist at:", new Date())
 }
 
 async function updateWhitelists() {
   await chrome.storage.sync.clear()
   await Promise.all( sources.map( url => updateAndSave(url) ))
 }
+
+async function checkUpdate() {
+    const updatedAt = await chrome.storage.sync.get("updated_at")
+    const lastUpdateTime = updatedAt.updated_at
+    const currentTime = Date.now()
+    if (!lastUpdateTime || (currentTime - lastUpdateTime) > 15*60*1000) {
+        await updateWhitelists()
+    }
+}
+
+
+
 
 

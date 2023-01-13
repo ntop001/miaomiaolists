@@ -6,9 +6,13 @@ try {
 }
 
 chrome.runtime.onInstalled.addListener(() => {
-    console.log("installed first time, update whitelist")
-    updateWhitelists()
+  console.log("installed first time, update whitelist")
+  updateWhitelists()
 });
+
+chrome.tabs.onCreated.addListener(() => {
+  checkUpdate()
+})
 
 function setSafeIcon(tabId) {
   // chrome.action.setBadgeBackgroundColor(
