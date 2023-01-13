@@ -3,7 +3,7 @@ window.onload = async function() {
 	let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
 	const host = getFullDomain(tab.url)
-	const isWhite = isWhitelisted(getHost(tab.url)) || false
+	const isWhite = await isWhitelisted(getHost(tab.url)) || false
 
   	const links = `
   		<div> ${isWhite? "Verified url:":"NOT verified:"}</div>

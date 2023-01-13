@@ -2,13 +2,22 @@ const whitelists = [
   "https://opensea.io/",
 ]
 
+const sources = [
+  "https://raw.githubusercontent.com/ntop001/miaomiaolists/main/whitelist.json",
+]
+
 const set = new Map()
 whitelists.map( v => (new URL(v)).hostname).forEach( v => {
   set[v] = true
 })
 
-function isWhitelisted(host) {
-  return set[host]
+async function isWhitelisted(host) {
+  if (set[host]) {
+    return true
+  }
+  const kv = await chrome.storage.sync.get(host)
+  console.log("get verified key:", host, " val:", kv[host])
+  return kv[host]
 }
 
 function isWhitelistedUrl(url) {
@@ -32,4 +41,27 @@ function getFullDomain(url) {
     var full = `${url.protocol}//${url.hostname}`
     return full
 }
+
+async function getWhitelists(url) {
+  const resp = await fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' }})
+  if (!resp.ok) {
+      throw new Error(`Error! status: ${resp.status}`);
+  }
+  return await resp.json()
+}
+
+async function updateAndSave(url) {
+  const data = await getWhitelists(url)
+  const { name, key, websites = []} = data
+  await websites.forEach( async url => {
+    await chrome.storage.sync.set({ [ getHost(url) ] : key || name });
+  })
+  console.log("update whitelist at:", Date.now())
+}
+
+async function updateWhitelists() {
+  await chrome.storage.sync.clear()
+  await Promise.all( sources.map( url => updateAndSave(url) ))
+}
+
 

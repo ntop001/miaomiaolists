@@ -9,5 +9,8 @@
   "permissions": ["storage", "activeTab", "scripting", "tabs"],
   "action": {
     "default_popup": "popup.html"
-  }
+  },
+  "host_permissions": [
+    "https://raw.githubusercontent.com/ntop001/miaomiaolists/*"
+  ]
 }

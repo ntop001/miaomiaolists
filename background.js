@@ -6,7 +6,8 @@ try {
 }
 
 chrome.runtime.onInstalled.addListener(() => {
-    console.log("ex installed first time")
+    console.log("installed first time, update whitelist")
+    updateWhitelists()
 });
 
 function setSafeIcon(tabId) {
@@ -27,12 +28,13 @@ function resetSafeIcon(tabId) {
   });
 }
 
-chrome.tabs.onUpdated.addListener(function(number, activeInfo, tab) {
+chrome.tabs.onUpdated.addListener(async function(number, activeInfo, tab) {
     if (activeInfo.status !== "complete") {
       return 
     }
     const host = getHost(tab.url)
-    if (isWhitelisted(host)) {
+    const verified = await isWhitelisted(host)
+    if (verified) {
       setSafeIcon(number) 
     } else {
       resetSafeIcon(number)
