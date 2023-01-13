@@ -33,8 +33,8 @@ function resetSafeIcon(tabId) {
 }
 
 chrome.tabs.onUpdated.addListener(async function(number, activeInfo, tab) {
-    if (activeInfo.status !== "complete") {
-      return 
+    if(!tab.url) {
+      return
     }
     const host = getHost(tab.url)
     const verified = await isWhitelisted(host)
