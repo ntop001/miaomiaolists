@@ -9,6 +9,9 @@
     "48": "icons/cat48.png",
     "128": "icons/cat128.png"
   },
+  "web_accessible_resources": [
+    { "resources": ["assets/images/*.png"], "matches": ["<all_urls>"] }
+  ],
   "background": {
     "service_worker": "background.js"
   },

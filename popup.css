@@ -1,16 +1,67 @@
-button {
-  height: 30px;
-  width: 30px;
-  outline: none;
-  margin: 10px;
-  border: none;
-  border-radius: 2px;
+body {
+  width: 180px;
+  padding: 0px;
+  margin: 0px;
 }
 
-button.current {
-  box-shadow: 0 0 0 2px white,
-              0 0 0 4px black;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
 }
+
+.verifyimg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 4px;
+}
+
+.verifyimg img {
+  width: 60px;
+}
+
+.website {
+  background-color: #ECECEC;
+  border-radius: 4px;
+  max-width: 80%;
+  height: 24px;
+  font-size: 13px;
+  font-weight: 450;
+  padding: 0px 8px;
+
+  white-space: nowrap;
+  display: inline-flex;
+  align-items : center;
+  flex: 0 1 auto;
+  margin-bottom: 4px;
+}
+
+.website div {
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nowrap;
+}
+
+.verifiytxt {
+
+}
+
+.appinfo {
+  margin-top: 24px;
+  background-color: #ECECEC;
+  padding: 6px;
+}
+
+.label {
+  color: #666;
+  font-size: 11px;
+}
+
+.label div {
+  font-size: 12px;
+}
+
 
 #links-container div {
 	margin: 4px;
