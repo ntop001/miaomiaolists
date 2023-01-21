@@ -25,12 +25,15 @@
 	  	"https://debank.com/",
 	  	"https://zapper.fi/",
 	  	"https://metamask.io/",
+	  	"https://portfolio.metamask.io/",
 	  	"https://chainlist.org/",
 	  	"https://compound.finance/",
 	  	"https://app.compound.finance/",
 	  	"https://aave.com/",
 	  	"https://app.aave.com/",
 	  	"https://curve.fi/",
-	  	"https://yearn.finance/"
+	  	"https://yearn.finance/",
+	  	"https://lido.fi/",
+	  	"https://stake.lido.fi/"
 	]
 }
