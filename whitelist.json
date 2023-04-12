@@ -6,6 +6,7 @@
 		"https://etherscan.io/",
 
 		"https://opensea.io/",
+		"https://pro.opensea.io/",
 		"https://looksrare.org/",
 		"https://x2y2.io/",
 		"https://blur.io/",
@@ -50,7 +51,15 @@
 	  	"https://www.proof.xyz/",
 	  	"https://wolf.game/",
 	  	"https://www.sandbox.game/",
-	  	"https://www.memeland.com/"
+	  	"https://www.memeland.com/",
 
+	  	"https://polygon.technology/",
+	  	"https://wallet.polygon.technology/",
+	  	"https://www.starknet.io/",
+	  	"https://starkgate.starknet.io/",
+	  	"https://zksync.io/",
+	  	"https://bridge.zksync.io/",
+	  	"https://arbitrum.io/",
+	  	"https://bridge.arbitrum.io/"
 	]
 }
